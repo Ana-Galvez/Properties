@@ -6,7 +6,10 @@ namespace Properties
     {
         static void Main(string[] args)
         {
-
+            Empleado ana = new Empleado("Ana");
+            ana.SetSalario(3000);
+            double salario = ana.GetSalario();
+            Console.WriteLine(salario);
         }
     }
 
