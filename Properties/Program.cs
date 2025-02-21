@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Runtime.InteropServices;
 
 namespace Properties
 {
@@ -8,7 +9,10 @@ namespace Properties
         {
             Empleado ana = new Empleado("Ana");
             ana.SALARIO = 3000;
-            Console.WriteLine("El sueldo del empleado es: " + (ana.SALARIO+100));
+            Console.WriteLine("El sueldo del empleado es: " + ana.SALARIO);
+            ana.SALARIO += -4000;
+            Console.WriteLine("El sueldo con el aumento del empleado es: " + ana.SALARIO);
+
         }
     }
 
@@ -23,7 +27,7 @@ namespace Properties
 
         private double EvaluarSalario(double salario)
         {
-            if (salario < 0) return salario = 0;
+            if (salario < 0)  return salario=0;
             else return salario;
         }
 
