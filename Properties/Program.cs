@@ -7,7 +7,8 @@ namespace Properties
         static void Main(string[] args)
         {
             Empleado ana = new Empleado("Ana");
-            
+            ana.SALARIO = 3000;
+            Console.WriteLine("El sueldo del empleado es: " + (ana.SALARIO+100));
         }
     }
 
@@ -22,8 +23,8 @@ namespace Properties
 
         private double EvaluarSalario(double salario)
         {
-            if (salario < 0) return this.salario = 0;
-            else return this.salario;
+            if (salario < 0) return salario = 0;
+            else return salario;
         }
 
         //CREACIÓN DE LA PROPERTY
