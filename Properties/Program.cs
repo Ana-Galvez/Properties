@@ -7,9 +7,7 @@ namespace Properties
         static void Main(string[] args)
         {
             Empleado ana = new Empleado("Ana");
-            ana.SetSalario(3000);
-            double salario = ana.GetSalario();
-            Console.WriteLine(salario);
+            
         }
     }
 
@@ -22,21 +20,34 @@ namespace Properties
             this.nombre=nombre;
         }
 
-        public void SetSalario(double salario)
+        private double EvaluarSalario(double salario)
         {
-            if (salario < 0)
-            {
-                Console.WriteLine("El salario no puede ser negativo. Se le asignará 0 como salario");
-                salario = 0;
-            }
-            else
-            {
-                this.salario = salario;
-            }
+            if (salario < 0) return this.salario = 0;
+            else return this.salario;
         }
-        public double GetSalario()
+
+        //CREACIÓN DE LA PROPERTY
+        public double SALARIO
         {
-            return salario;
+            get { return this.salario; }
+            set { this.salario = EvaluarSalario(value); }
         }
+
+        //public void SetSalario(double salario)
+        //{
+        //    if (salario < 0)
+        //    {
+        //        Console.WriteLine("El salario no puede ser negativo. Se le asignará 0 como salario");
+        //        salario = 0;
+        //    }
+        //    else
+        //    {
+        //        this.salario = salario;
+        //    }
+        //}
+        //public double GetSalario()
+        //{
+        //    return salario;
+        //}
     }
 }
